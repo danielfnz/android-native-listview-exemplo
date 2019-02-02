@@ -10,8 +10,8 @@ import java.util.Arrays;
 import java.util.List;
 
 import danielfnz.com.br.listviewexemplo.R;
-import danielfnz.com.br.listviewexemplo.model.Curso;
-import danielfnz.com.br.listviewexemplo.model.EstadoAtual;
+import danielfnz.com.br.listviewexemplo.TimesAdapter;
+import danielfnz.com.br.listviewexemplo.model.Time;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,18 +19,18 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
-        ListView lista = (ListView) findViewById(R.id.lista);
-        List<Curso> cursos = todosOsCursos();
-        ArrayAdapter<Curso> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, cursos);
-        lista.setAdapter(adapter);
 
+        ListView lista = (ListView) findViewById(R.id.lista);
+        List<Time> times = todosOsTimes();
+        TimesAdapter adapter =  new TimesAdapter(this, (ArrayList<Time>) times);
+        lista.setAdapter(adapter);
     }
 
-    private List<Curso> todosOsCursos() {
+    private List<Time> todosOsTimes() {
 
         return new ArrayList<>(Arrays.asList(
-                new Curso("Java", "básico de Java", EstadoAtual.FINALIZADO),
-                new Curso("HTML e CSS", "HTML 5 e suas novidades", EstadoAtual.FAZENDO),
-                new Curso("Android", "boas práticas", EstadoAtual.FINALIZADO)));
+                new Time("Flamengo", R.drawable.flamengo),
+                new Time("Sao paulo", R.drawable.saopaulo),
+                new Time("Vasco", R.drawable.vasco)));
     }
 }
