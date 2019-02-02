@@ -1,4 +1,4 @@
-package danielfnz.com.br.listviewexemplo;
+package danielfnz.com.br.listviewexemplo.model;
 
 /**
  * Created by Alunoinf_2 on 02/02/2019.
